@@ -23,3 +23,14 @@ class Main {
         System.out.println(sum);
     }
 }
+
+
+// Sample Input
+// 5
+// 1 2 3 4 5
+
+// Sample Output
+// 17
+
+// Explanation
+// (5-1)xor1 = 5, (5-2)xor2 = 1, (5-3)xor3 = 1, (5-4)xor4 = 5, (5-5)xor5 = 5.
