@@ -1,7 +1,7 @@
 // Given a linked list of N nodes. The task is to reverse the list by changing links between nodes 
 // (i.e if the list is 1->2->3->4 then it becomes 1<-2<-3<-4) and return the head of the modified list.
 
-
+// 1. using iteration
 public static Node ReverseLinkedList(Node head) {
 	// return the head of the modified linked list
     Node prev = null;
@@ -16,6 +16,30 @@ public static Node ReverseLinkedList(Node head) {
     return prev;
 }
 
+
+//2nd method using recursion
+public static Node ReverseLinkedList(Node head) {
+    if(head == null || head.next == null)
+        return head;
+
+    Node newData = ReverseLinkedList (head.next);
+    Node dataNext = head.next;
+    dataNext.next = head;
+    head.next = null;
+    return newData;
+}
+
+// 3 recursion method
+public static Node ReverseLinkedList(Node head) {
+    if(head == null || head.next == null)
+        return head;
+
+    Node result = ReverseLinkedList(head.next);
+    head.next.next = head;
+
+    head.next = null;
+    return result;  
+}
 
 // Input-1:
 // 6
