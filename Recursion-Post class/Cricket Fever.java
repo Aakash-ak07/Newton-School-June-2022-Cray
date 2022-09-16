@@ -23,24 +23,24 @@ class Main {
             return Math.max(arr[0], arr[1]);
         }
         int result[] = new int[n / 2];
-        for(int i = 0; i < n; i += 4)
+        for (int i = 0; i < n; i += 4) 
         {
-            if(arr[i] >= arr[i+1])
+            if (arr[i] >= arr[i + 1]) 
             {
                 result[i / 2 + 1] = arr[i + 1];
                 result[i / 2] = arr[i];
-            }
-            else
+            } 
+            else 
             {
-                result[i / 2 + 1] = arr[i + 1];
+                result[i / 2 + 1] = arr[i];
                 result[i / 2] = arr[i + 1];
             }
-            if(arr[i + 2] >= arr[i + 3])
+            if (arr[i + 2] >= arr[i + 3]) 
             {
-                result[i / 2 + 1] = arr[i + 2];
-                result[i / 2] = arr[i + 3];
-            }
-            else
+                result[i / 2 + 1] += arr[i + 2];
+                result[i / 2] += arr[i + 3];
+            } 
+            else 
             {
                 result[i / 2 + 1] += arr[i + 3];
                 result[i / 2] += arr[i + 2];
