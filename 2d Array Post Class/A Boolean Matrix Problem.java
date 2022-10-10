@@ -71,3 +71,41 @@ class Main {
 // 1 1 1 1
 // 0 0 0 0
 // 1 1 1 1
+
+//2nd approch
+
+class Main {
+	public static void main (String[] args) 
+    {           
+		Scanner sc = new Scanner(System.in);
+        int t = Integer.parseInt(sc.nextLine());
+        for (int z = 0; z < t; z++) 
+        {
+            String line = sc.nextLine();                              //"5 4"
+            String temp[] = line.split(" ");                         //"5 4" -> ["5", "4"]
+            int rows = Integer.parseInt(temp[0]);//5
+            int cols = Integer.parseInt(temp[1]);//4
+            int arr[][] = new int[rows][cols];
+            for (int r = 0; r < rows; r++) 
+            {
+                line = sc.nextLine();                                   //"1 0 0 0"
+                String temp1[] = line.split(" ");                       //["1","0","0","0"]
+                int number = 0;                                         //added
+                for (int c = 0; c < cols; c++) 
+                {
+                    arr[r][c] = Integer.parseInt(temp1[c]);
+                    if (arr[r][c] == 1) 
+                    {
+                        number = 1;
+                        break;
+                    }
+                }
+                for (int i = 0; i < cols; i++) 
+                {
+                    System.out.print(number + " ");
+                }
+                System.out.println();
+            }
+        }
+	}
+}
